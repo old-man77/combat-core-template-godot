@@ -1,2 +1,15 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+Clean Combat Core
+
+2D Hack & Slash Combat System for Godot.
+
+Features:
+- Combo system
+- Input buffer
+- Weapon resource
+- Enemy base
+
+If you use this system, please credit:
+Adam - Clean Combat Core.
