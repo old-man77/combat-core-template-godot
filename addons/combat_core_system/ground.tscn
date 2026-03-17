@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn8byp6rlch1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_njleo"]
+size = Vector3(320, 16, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmvuu"]
+size = Vector2(331, 16)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.2556, 0.26082, 0.36, 1)
+position = Vector2(-0.499997, 84)
+scale = Vector2(1.03437, 1)
+mesh = SubResource("BoxMesh_njleo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 84)
+shape = SubResource("RectangleShape2D_bmvuu")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmaphtop7ol5h"]
+
+[ext_resource type="PackedScene" uid="uid://deuv20tf5msrv" path="res://addons/combat_core_system/player.tscn" id="1_n628j"]
+[ext_resource type="Script" path="res://addons/combat_core_system/Scripts/bg.gd" id="2_4oxgu"]
+[ext_resource type="PackedScene" uid="uid://bn8byp6rlch1" path="res://addons/combat_core_system/ground.tscn" id="2_e18y2"]
+[ext_resource type="Texture2D" uid="uid://bc0u5lo62x5fy" path="res://addons/combat_core_system/Sprites/S_BG.png" id="2_eyqso"]
+[ext_resource type="PackedScene" uid="uid://vprh4d6n1ysn" path="res://addons/combat_core_system/enemy.tscn" id="5_q8p8w"]
+
+[node name="Combat_room" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_n628j")]
+position = Vector2(-111, 29)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_e18y2")]
+scale = Vector2(1.5, 1)
+
+[node name="BG" type="ParallaxBackground" parent="."]
+script = ExtResource("2_4oxgu")
+scroll_speed = Vector2(17, 17)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+modulate = Color(1.5, 1.25, 1, 1)
+motion_mirroring = Vector2(768, 768)
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/ParallaxLayer"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("2_eyqso")
+region_enabled = true
+region_rect = Rect2(0, 0, 768, 768)
+
+[node name="Enemy" parent="." instance=ExtResource("5_q8p8w")]
+position = Vector2(121, 63)
